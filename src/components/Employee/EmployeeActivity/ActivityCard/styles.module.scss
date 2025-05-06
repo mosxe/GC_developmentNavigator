@@ -211,7 +211,7 @@
     }
   }
 
-  &:hover {
+  &:hover:not(.activity-card_skeleton) {
     border-color: #7445d8ff;
     box-shadow: 0px 8px 24px 0px rgba(0, 0, 0, 0.18);
   }
