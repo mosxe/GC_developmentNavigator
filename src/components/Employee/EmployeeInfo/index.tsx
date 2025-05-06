@@ -2,7 +2,7 @@ import { FunctionComponent } from "react";
 import { useGetEmployeeInfo } from "./hooks/useGetEmployeeInfo";
 import Skeleton from "components/Skeleton";
 import { ErrorBoundary } from "react-error-boundary";
-import { ERROR_MESSAGE } from "constants";
+import { ERROR_MESSAGE } from "strings";
 import styles from "./styles.module.scss";
 
 const EmployeeInfo: FunctionComponent = () => {

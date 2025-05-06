@@ -1,6 +1,7 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react-swc";
 import svgr from "vite-plugin-svgr";
+import mappingPlugin from "./src/mappingPlugin";
 
 type ViteConfig = {
   command: string;
@@ -18,9 +19,13 @@ export default defineConfig(({ mode }: ViteConfig) => {
       alias: {
         components: "/src/components",
         api: "/src/api",
-        constants: "/src/constants",
+        strings: "/src/strings",
       },
     },
-    plugins: [react(), svgr({ include: "**/*.svg?r" })],
+    plugins: [
+      react(),
+      svgr({ include: "**/*.svg?r" }),
+      mappingPlugin("gnivc_development_navigator"),
+    ],
   };
 });

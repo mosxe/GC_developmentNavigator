@@ -7,7 +7,7 @@ import ActivityCard from "./ActivityCard";
 import SkeletonCard from "./ActivityCard/SkeletonCard";
 import Progress from "./Progress";
 import { ErrorBoundary } from "react-error-boundary";
-import { ERROR_MESSAGE } from "constants";
+import { ERROR_MESSAGE } from "strings";
 import styles from "./styles.module.scss";
 
 const EmployeeActivity: FunctionComponent = () => {

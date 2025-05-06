@@ -4,7 +4,7 @@ import Layout from "./Layout";
 import Material from "./Material";
 import Skeleton from "components/Skeleton";
 import { ErrorBoundary } from "react-error-boundary";
-import { ERROR_MESSAGE } from "constants";
+import { ERROR_MESSAGE } from "strings";
 
 const Materials: FunctionComponent = () => {
   const { data, isLoading, error } = useGetMaterials();
