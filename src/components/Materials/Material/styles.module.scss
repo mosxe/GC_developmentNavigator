@@ -8,6 +8,7 @@
   line-height: 24px;
   color: #8b55ff;
   border: none;
+  margin: 0px;
   cursor: pointer;
   background-color: transparent;
   letter-spacing: 0.15px;
@@ -15,5 +16,7 @@
 
   &:hover {
     color: #6929f2;
+    border-color: transparent;
+    background-color: transparent;
   }
 }

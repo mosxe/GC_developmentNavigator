@@ -13,10 +13,7 @@ import styles from "./styles.module.scss";
 const EmployeeActivity: FunctionComponent = () => {
   const { data, isLoading, error } = useGetEmployeeActivity();
   const isError = error || data === null || data.error;
-  console.log("emplo activity");
-  console.log(data);
 
-  console.log("isError:  " + isError);
   if (isLoading) {
     return (
       <div className={styles["employee-activity"]}>
@@ -32,22 +29,24 @@ const EmployeeActivity: FunctionComponent = () => {
   }
 
   return (
-    <div className={styles["employee-activity"]}>
+    <>
       <ErrorBoundary fallback={<div>{ERROR_MESSAGE}</div>}>
-        {data.data.map((card: Activity, index) => (
-          <ActivityCard
-            key={index}
-            icon={card.icon}
-            title={card.title}
-            buttonName={card.buttonName}
-            link={card.link}
-            date={card.date}
-            status={card.status}
-            progress={<Progress progress={card.progress} />}
-          />
-        ))}
+        <div className={styles["employee-activity"]}>
+          {data.data.map((card: Activity, index) => (
+            <ActivityCard
+              key={index}
+              icon={card.icon}
+              title={card.title}
+              buttonName={card.buttonName}
+              link={card.link}
+              date={card.date}
+              status={card.status}
+              progress={<Progress progress={card.progress} />}
+            />
+          ))}
+        </div>
       </ErrorBoundary>
-    </div>
+    </>
   );
 };
 

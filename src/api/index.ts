@@ -45,7 +45,7 @@ const getEmployeeActivity = async <T>(): Promise<T> => {
   }
 
   try {
-    const response = await fetch(API_BASE, {
+    const response = await fetch(`${API_BASE}/getPersonActivity`, {
       method: "post",
       headers: HEADERS,
     });
@@ -77,7 +77,7 @@ const getMaterials = async <T>(): Promise<T> => {
   }
 
   try {
-    const response = await fetch(API_BASE, {
+    const response = await fetch(`${API_BASE}/getMaterials`, {
       method: "post",
       headers: HEADERS,
     });
@@ -101,7 +101,7 @@ const getRecommendations = async <T>(): Promise<T> => {
   }
 
   try {
-    const response = await fetch(API_BASE, {
+    const response = await fetch(`${API_BASE}/getRecommendations`, {
       method: "post",
       headers: HEADERS,
     });

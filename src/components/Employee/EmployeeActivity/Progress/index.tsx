@@ -15,10 +15,12 @@ const Progress: FunctionComponent<Props> = ({ progress }) => {
   }
 
   if (progress.type === "score") {
-    <>
-      <span className={styles.text}>{progress.score}</span>
-      <span className={styles.subtext}> из {progress.maxScore}</span>
-    </>;
+    return (
+      <>
+        <span className={styles.text}>{progress.score}</span>
+        <span className={styles.subtext}> из {progress.maxScore}</span>
+      </>
+    );
   }
 
   if (progress.type === "text" && progress.text) {
