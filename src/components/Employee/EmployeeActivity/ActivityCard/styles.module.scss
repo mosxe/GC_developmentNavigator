@@ -254,6 +254,9 @@
     background-clip: text;
     -webkit-background-clip: text;
     margin: 0px !important;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
   }
 
   &__body {
@@ -267,6 +270,9 @@
 
   &__progress {
     height: 32px;
+    display: flex;
+    align-items: baseline;
+    gap: 4px;
   }
 
   &__text {

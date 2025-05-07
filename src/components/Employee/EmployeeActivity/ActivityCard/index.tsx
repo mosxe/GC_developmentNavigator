@@ -1,5 +1,6 @@
 import React, { FunctionComponent, ReactElement } from "react";
 import Icon, { IconProps } from "../Icon";
+import TextTooltip from "../TextTooltip";
 import styles from "./styles.module.scss";
 
 type Props = {
@@ -31,7 +32,9 @@ const ActivityCard: FunctionComponent<Props> = ({
         <div className={styles["activity-card__icon"]}>
           <Icon iconName={icon} />
         </div>
-        <h3 className={styles["activity-card__title"]}>{title}</h3>
+        <TextTooltip text={title}>
+          <h3 className={styles["activity-card__title"]}>{title}</h3>
+        </TextTooltip>
         <div className={styles["activity-card__body"]}>
           <div className={styles["activity-card__progress"]}>{progress}</div>
           <span className={styles["activity-card__text"]}>{date}</span>

@@ -138,7 +138,7 @@ export const mockData = {
           type: "text",
           score: "",
           maxScore: "",
-          text: "Middle 2",
+          text: "Middle Senior Expert",
         },
       },
       {
@@ -157,7 +157,7 @@ export const mockData = {
       },
       {
         icon: "ipr",
-        title: "ИПР",
+        title: "ИПР Алексеева Кирилла Владимировича апрель 2025",
         link: "/home",
         date: "01.12.2024",
         status: "Оценка завершена",
