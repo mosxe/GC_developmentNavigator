@@ -119,9 +119,34 @@ const getRecommendations = async <T>(): Promise<T> => {
   }
 };
 
+const createIpr = async <T>(): Promise<T> => {
+  if (isDevelopment) {
+    return fetchMock(mockData.createIpr) as T;
+  }
+
+  try {
+    const response = await fetch(`${API_BASE}/createIpr`, {
+      method: "post",
+      headers: HEADERS,
+    });
+
+    if (!response.ok) throw new Error(response.statusText);
+
+    const data: T = await response.json();
+    return data;
+  } catch (error) {
+    if (error instanceof Error) {
+      throw new Error(error.message);
+    } else {
+      throw new Error(`Неизвестная ошибка createIpr: ${error}`);
+    }
+  }
+};
+
 export {
   getEmployeeInfo,
   getEmployeeActivity,
   getMaterials,
   getRecommendations,
+  createIpr,
 };

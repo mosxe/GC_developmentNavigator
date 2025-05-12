@@ -1,6 +1,8 @@
-import React, { FunctionComponent, ReactElement } from "react";
+import React, { useState, FunctionComponent, ReactElement } from "react";
 import Icon, { IconProps } from "../Icon";
 import TextTooltip from "../TextTooltip";
+import { createIpr } from "api";
+import { Response } from "api/index.types";
 import styles from "./styles.module.scss";
 
 type Props = {
@@ -22,8 +24,16 @@ const ActivityCard: FunctionComponent<Props> = ({
   status,
   buttonName,
 }): ReactElement => {
-  const handleClick = () => {
-    window.open(link, "_blank");
+  const [isDisabldBtn, setIsDisabldBtn] = useState<boolean>(false);
+
+  const handleClick = async () => {
+    if (icon === "ipr" && link === "") {
+      setIsDisabldBtn(true);
+      const response = await createIpr<Response<string | null>>();
+      console.log(response);
+    } else {
+      window.open(link, "_blank");
+    }
   };
 
   return (
@@ -45,6 +55,7 @@ const ActivityCard: FunctionComponent<Props> = ({
         <button
           type="button"
           className={styles["activity-card__btn"]}
+          disabled={isDisabldBtn}
           onClick={handleClick}
         >
           <span>{buttonName}</span>

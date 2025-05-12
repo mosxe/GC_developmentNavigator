@@ -104,18 +104,19 @@ export const mockData = {
         title: "Рост (ОС 360)",
         link: "/home",
         date: "24.11.2024",
-        status: "Оценка руководителя",
+        status: "Оценка руководителя проводилась очень давно",
         buttonName: "Результаты",
         progress: {
           type: "score",
           score: "4.7",
-          maxScore: "5",
+          maxScore: "500",
           text: "",
         },
       },
       {
         icon: "assessment_achievements",
-        title: "Оценка достижений",
+        title:
+          "Оценка достижений Оценка достижений Оценка достижений Оценка достижений ",
         link: "/home",
         date: "10.09.2024",
         status: "",
@@ -146,7 +147,7 @@ export const mockData = {
         title: "Карьера",
         link: "/home",
         date: "24.11.2024",
-        status: "Оценка не проводилась",
+        status: "Оценка не проводилась уже слишком давно",
         buttonName: "Начать",
         progress: {
           type: "text",
@@ -170,6 +171,11 @@ export const mockData = {
         },
       },
     ],
+    error: false,
+    errorText: "",
+  },
+  createIpr: {
+    data: "ИПР успешно создан",
     error: false,
     errorText: "",
   },
