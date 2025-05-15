@@ -8,7 +8,7 @@ import styles from "./styles.module.scss";
 
 const App: FunctionComponent = () => {
   return (
-    <div className={styles.width}>
+    <>
       <Title text="Навигатор по развитию" />
       <main className={styles.row}>
         <div className={styles.wrapper}>
@@ -18,7 +18,7 @@ const App: FunctionComponent = () => {
         </div>
         <Sidebar />
       </main>
-    </div>
+    </>
   );
 };
 
