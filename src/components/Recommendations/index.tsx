@@ -36,13 +36,7 @@ const Recommendations: FunctionComponent = () => {
       <ErrorBoundary fallback={<div>{ERROR_MESSAGE}</div>}>
         <div className={styles.recommendations}>
           {data.data.map((item) => (
-            <RecommendationCard
-              key={item.id}
-              title={item.title}
-              text={item.text}
-              link={item.link}
-              image={item.image}
-            />
+            <RecommendationCard key={item.id} {...item} />
           ))}
         </div>
       </ErrorBoundary>

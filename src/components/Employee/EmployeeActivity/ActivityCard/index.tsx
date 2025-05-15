@@ -1,40 +1,65 @@
-import React, { useState, FunctionComponent, ReactElement } from "react";
-import Icon, { IconProps } from "../Icon";
+import { useState, FunctionComponent, ReactElement } from "react";
+import { NotificationService } from "@intauto/ui-kit";
+import Icon from "../Icon";
+import Progress from "../Progress";
 import TextTooltip from "../TextTooltip";
+import SkeletonCard from "./SkeletonCard";
 import { createIpr } from "api";
 import { Response } from "api/index.types";
 import styles from "./styles.module.scss";
+import { Activity } from "../hooks/index.types";
 
-type Props = {
-  icon: IconProps;
-  title: string;
-  buttonName: string;
-  link?: string;
-  date?: string;
-  status?: string;
-  progress?: React.ReactNode;
-};
-
-const ActivityCard: FunctionComponent<Props> = ({
-  icon,
-  title,
-  link,
-  progress,
-  date,
-  status,
-  buttonName,
-}): ReactElement => {
-  const [isDisabldBtn, setIsDisabldBtn] = useState<boolean>(false);
+const ActivityCard: FunctionComponent<Activity> = (props): ReactElement => {
+  const [data, setData] = useState<Activity>(props);
+  const [isLoading, setIsLoading] = useState<boolean>(false);
+  const {
+    icon,
+    title,
+    link,
+    date,
+    status,
+    buttonName,
+    isAssignable,
+    progress,
+  } = data;
 
   const handleClick = async () => {
-    if (icon === "ipr" && link === "") {
-      setIsDisabldBtn(true);
-      const response = await createIpr<Response<string | null>>();
-      console.log(response);
+    if (icon === "ipr" && isAssignable) {
+      setIsLoading(true);
+      try {
+        const response = await createIpr<Response<Activity>>();
+        if (response.error) {
+          const errorText =
+            response.errorText || "Возникла ошибка при создании ИПР";
+          NotificationService.baseNotification(errorText, "danger", {
+            closeOnClick: false,
+            pauseOnFocusLoss: false,
+            position: "top-right",
+          });
+        } else {
+          setData(response.data);
+        }
+      } catch (error) {
+        console.error(error);
+        NotificationService.baseNotification(
+          "Возникла ошибка при создании ИПР",
+          "danger",
+          {
+            closeOnClick: false,
+            pauseOnFocusLoss: false,
+            position: "top-right",
+          }
+        );
+      }
+      setIsLoading(false);
     } else {
       window.open(link, "_blank");
     }
   };
+
+  if (isLoading) {
+    return <SkeletonCard />;
+  }
 
   return (
     <div className={styles["activity-card"]}>
@@ -46,7 +71,9 @@ const ActivityCard: FunctionComponent<Props> = ({
           <h3 className={styles["activity-card__title"]}>{title}</h3>
         </TextTooltip>
         <div className={styles["activity-card__body"]}>
-          <div className={styles["activity-card__progress"]}>{progress}</div>
+          <div className={styles["activity-card__progress"]}>
+            <Progress progress={progress} />
+          </div>
           <span className={styles["activity-card__text"]}>{date}</span>
           <span className={styles["activity-card__text"]}>{status}</span>
         </div>
@@ -55,7 +82,6 @@ const ActivityCard: FunctionComponent<Props> = ({
         <button
           type="button"
           className={styles["activity-card__btn"]}
-          disabled={isDisabldBtn}
           onClick={handleClick}
         >
           <span>{buttonName}</span>

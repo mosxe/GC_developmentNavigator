@@ -23,6 +23,8 @@ export const mockData = {
         text: "Мы собрали для вас лучшие рекомендации для старта!",
         image: "",
         link: "",
+        link_target: "",
+        buttonName: "Перейти",
       },
       {
         id: "2",
@@ -31,6 +33,8 @@ export const mockData = {
         image:
           "https://i.pinimg.com/originals/5d/e2/42/5de24294bad21ec99931f4c362354f22.jpg",
         link: "/home",
+        link_target: "",
+        buttonName: "Перейти",
       },
       {
         id: "3",
@@ -39,6 +43,8 @@ export const mockData = {
         image:
           "https://i.pinimg.com/originals/5d/e2/42/5de24294bad21ec99931f4c362354f22.jpg",
         link: "/home",
+        link_target: "",
+        buttonName: "Перейти",
       },
       {
         id: "4",
@@ -46,6 +52,8 @@ export const mockData = {
         text: "Гуру делятся своим опытом!",
         image: "",
         link: "",
+        link_target: "",
+        buttonName: "Перейти",
       },
       {
         id: "5",
@@ -53,6 +61,8 @@ export const mockData = {
         text: "Для тех, кто не успел посмотреть живьем.",
         image: "",
         link: "/home",
+        link_target: "",
+        buttonName: "Перейти",
       },
       {
         id: "6",
@@ -61,6 +71,8 @@ export const mockData = {
         image:
           "https://i.pinimg.com/originals/5d/e2/42/5de24294bad21ec99931f4c362354f22.jpg",
         link: "/home",
+        link_target: "",
+        buttonName: "Перейти",
       },
       {
         id: "7",
@@ -68,6 +80,8 @@ export const mockData = {
         text: "Лучше, чем ваш лечащий врач!",
         image: "",
         link: "",
+        link_target: "",
+        buttonName: "Перейти",
       },
       {
         id: "8",
@@ -75,6 +89,8 @@ export const mockData = {
         text: "Лучше, чем ваш лечащий врач!",
         image: "",
         link: "",
+        link_target: "",
+        buttonName: "Перейти",
       },
       {
         id: "9",
@@ -82,6 +98,8 @@ export const mockData = {
         text: "Лучше, чем ваш лечащий врач!",
         image: "",
         link: "",
+        link_target: "",
+        buttonName: "Перейти",
       },
     ],
     error: false,
@@ -106,6 +124,7 @@ export const mockData = {
         date: "24.11.2024",
         status: "Оценка руководителя проводилась очень давно",
         buttonName: "Результаты",
+        isAssignable: false,
         progress: {
           type: "score",
           score: "4.7",
@@ -121,6 +140,7 @@ export const mockData = {
         date: "10.09.2024",
         status: "",
         buttonName: "Результаты",
+        isAssignable: false,
         progress: {
           type: "score",
           score: "4.7",
@@ -135,6 +155,7 @@ export const mockData = {
         date: "23.10.2024",
         status: "Оценка эксперта",
         buttonName: "Результаты",
+        isAssignable: false,
         progress: {
           type: "text",
           score: "",
@@ -149,6 +170,7 @@ export const mockData = {
         date: "24.11.2024",
         status: "Оценка не проводилась уже слишком давно",
         buttonName: "Начать",
+        isAssignable: false,
         progress: {
           type: "text",
           score: "",
@@ -163,10 +185,26 @@ export const mockData = {
         date: "01.12.2024",
         status: "Оценка завершена",
         buttonName: "Продолжить",
+        isAssignable: false,
         progress: {
           type: "progress",
           score: "60",
           maxScore: "100",
+          text: "",
+        },
+      },
+      {
+        icon: "ipr",
+        title: "ИПР",
+        link: "",
+        date: "",
+        status: "",
+        buttonName: "Начать",
+        isAssignable: true,
+        progress: {
+          type: "text",
+          score: "",
+          maxScore: "",
           text: "",
         },
       },
@@ -175,7 +213,21 @@ export const mockData = {
     errorText: "",
   },
   createIpr: {
-    data: "ИПР успешно создан",
+    data: {
+      icon: "ipr",
+      title: "ИПР Алексеева Кирилла Владимировича май 2025",
+      link: "/home",
+      date: "",
+      status: "",
+      buttonName: "Продолжить",
+      isAssignable: false,
+      progress: {
+        type: "progress",
+        score: "0",
+        maxScore: "100",
+        text: "",
+      },
+    },
     error: false,
     errorText: "",
   },

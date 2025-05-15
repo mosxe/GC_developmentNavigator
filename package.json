@@ -14,7 +14,9 @@
   },
   "dependencies": {
     "@ff/ui-kit": "^4.2.0",
+    "@intauto/ui-kit": "^6.0.0",
     "classnames": "^2.5.1",
+    "lodash": "^4.17.21",
     "path": "^0.12.7",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",

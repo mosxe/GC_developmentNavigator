@@ -3,11 +3,13 @@ import cls from "classnames";
 import { Recommendation } from "../hooks/index.types";
 import styles from "./styles.module.scss";
 
-const RecommendationCard: FunctionComponent<Omit<Recommendation, "id">> = ({
+const RecommendationCard: FunctionComponent<Recommendation> = ({
   title,
   text,
   image,
   link,
+  link_target,
+  buttonName,
 }) => {
   const classNameCard = cls(styles["recommendation-card"], {
     [styles["recommendation-card_l"]]: !!image,
@@ -37,9 +39,9 @@ const RecommendationCard: FunctionComponent<Omit<Recommendation, "id">> = ({
           <button
             className={styles["recommendation-card__btn"]}
             type="button"
-            onClick={() => window.open(link, "_blank")}
+            onClick={() => window.open(link, link_target)}
           >
-            <span>Подробнее</span>
+            <span>{buttonName}</span>
             <svg
               width="12.499512"
               height="10.500000"

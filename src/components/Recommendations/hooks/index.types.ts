@@ -6,6 +6,8 @@ export interface Recommendation {
   text: string;
   image: string;
   link: string;
+  link_target: string;
+  buttonName: string;
 }
 
 export type ResponseRecommendations = Response<Recommendation[]>;

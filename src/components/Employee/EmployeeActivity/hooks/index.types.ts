@@ -8,6 +8,7 @@ export interface Activity {
   date: string;
   status: string;
   buttonName: string;
+  isAssignable: boolean;
   progress: {
     type: "score" | "progress" | "text";
     score: string;

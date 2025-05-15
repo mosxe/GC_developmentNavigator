@@ -1,12 +1,10 @@
-"use client";
-
 import { FunctionComponent } from "react";
 import { useGetEmployeeActivity } from "./hooks/useGetEmployeeActivity";
 import { Activity } from "./hooks/index.types";
 import ActivityCard from "./ActivityCard";
 import SkeletonCard from "./ActivityCard/SkeletonCard";
-import Progress from "./Progress";
 import { ErrorBoundary } from "react-error-boundary";
+import { Toasts } from "@ff/ui-kit";
 import { ERROR_MESSAGE } from "strings";
 import styles from "./styles.module.scss";
 
@@ -33,19 +31,11 @@ const EmployeeActivity: FunctionComponent = () => {
       <ErrorBoundary fallback={<div>{ERROR_MESSAGE}</div>}>
         <div className={styles["employee-activity"]}>
           {data.data.map((card: Activity, index) => (
-            <ActivityCard
-              key={index}
-              icon={card.icon}
-              title={card.title}
-              buttonName={card.buttonName}
-              link={card.link}
-              date={card.date}
-              status={card.status}
-              progress={<Progress progress={card.progress} />}
-            />
+            <ActivityCard key={index} {...card} />
           ))}
         </div>
       </ErrorBoundary>
+      <Toasts style={{ zIndex: 2000 }} />
     </>
   );
 };
