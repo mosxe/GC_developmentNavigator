@@ -22,9 +22,9 @@ export const mockData = {
         title: "Рекомендации по обучению",
         text: "Мы собрали для вас лучшие рекомендации для старта!",
         image: "",
-        link: "",
+        link: "фывфы",
         link_target: "",
-        buttonName: "Перейти",
+        buttonName: "Узнай свой уровень",
       },
       {
         id: "2",

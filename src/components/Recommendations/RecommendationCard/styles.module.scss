@@ -1,166 +1,3 @@
-// .recommendation-card {
-//   position: relative;
-//   height: 176px;
-//   width: 100%;
-//   display: flex;
-//   border-radius: 16px;
-//   background: #f3f3f3;
-//   border: 0px solid transparent;
-//   order: 2;
-//   transition: box-shadow 0.3s;
-
-//   &::before {
-//     content: "";
-//     position: absolute;
-//     opacity: 0;
-//     top: -1px;
-//     left: -1px;
-//     right: -1px;
-//     bottom: -1px;
-//     background: linear-gradient(90deg, #af42afff, #7445d8ff);
-//     border-radius: inherit;
-//     z-index: -1;
-//     transition: opacity 0.3s;
-//   }
-
-//   &:hover {
-//     box-shadow: 0px 8px 24px 0px rgba(0, 0, 0, 0.18);
-
-//     &::before {
-//       opacity: 1;
-//     }
-//   }
-
-//   &__wrapper {
-//     display: flex;
-//     flex-direction: column;
-//     padding: 16px 24px;
-//     border-radius: inherit;
-//   }
-
-//   &_l {
-//     grid-column: span 2;
-//     width: 100%;
-//   }
-
-//   &__container {
-//     flex: 1;
-//     display: flex;
-//     flex-direction: column;
-//     gap: 16px;
-//   }
-
-//   &__image {
-//     width: 218px;
-//     height: 144px;
-//     object-fit: fill;
-//     border-radius: 8px;
-//   }
-
-//   &__text {
-//     font-size: 14px;
-//     font-weight: 400;
-//     line-height: 18px;
-//     color: rgb(73, 70, 76);
-//     display: -webkit-box;
-//     -webkit-box-orient: vertical;
-//     -webkit-line-clamp: 2;
-//     overflow: hidden;
-//     height: 100%;
-//     max-height: calc(2 * 18px);
-
-//     &_bold {
-//       font-weight: 600;
-//     }
-//   }
-
-//   &__btn {
-//     position: relative;
-//     max-width: 122px;
-//     width: 100%;
-//     display: flex;
-//     align-items: center;
-//     gap: 8px;
-//     padding: 7px 12px;
-//     font-size: 14px;
-//     font-weight: 400;
-//     line-height: 20px;
-//     letter-spacing: 0.15px;
-//     color: transparent;
-//     border-radius: 4px;
-//     margin: 0px;
-//     border: none;
-//     cursor: pointer;
-//     background: transparent;
-//     background-size: 100%;
-//     overflow: hidden;
-
-//     &::before {
-//       content: "";
-//       position: absolute;
-//       top: 0;
-//       left: 0;
-//       width: 100%;
-//       height: 100%;
-//       background: linear-gradient(
-//         138.01deg,
-//         rgb(175, 66, 175) 5.223%,
-//         rgb(116, 69, 216) 95.896%
-//       );
-//       opacity: 0;
-//       transition: opacity 0.3s, background 0.3s;
-//       z-index: 1;
-//     }
-
-//     & span {
-//       color: transparent;
-//       background-image: linear-gradient(to right, #af42af, #7445d8);
-//       background-clip: text;
-//       -webkit-background-clip: text;
-//       transition: color 0.3s;
-//     }
-
-//     & span,
-//     svg {
-//       z-index: 2;
-//     }
-
-//     & svg path {
-//       transition: fill 0.3s;
-//     }
-
-//     &:hover {
-//       color: transparent;
-//       border-color: transparent;
-//       background-color: transparent;
-
-//       & span {
-//         color: rgb(255, 255, 255);
-//       }
-
-//       &::before {
-//         opacity: 1;
-//       }
-
-//       & svg path {
-//         fill: rgb(255, 255, 255);
-//       }
-//     }
-//   }
-// }
-
-// @media screen and (max-width: 828px) {
-//   .recommendation-card_l {
-//     order: 1;
-//   }
-// }
-
-// @media screen and (max-width: 580px) {
-//   .recommendation-card {
-//     grid-column: span 3;
-//   }
-// }
-
 .recommendation-card {
   position: relative;
   height: 176px;
@@ -171,7 +8,6 @@
   border: 1px solid transparent;
   order: 2;
   transition: box-shadow 0.3s, border-color 0.3s;
-
 
   &:hover {
     border-color: #7445d8ff;
@@ -223,7 +59,7 @@
 
   &__btn {
     position: relative;
-    max-width: 122px;
+    min-width: 122px;
     width: 100%;
     display: flex;
     align-items: center;

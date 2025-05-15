@@ -49,21 +49,14 @@ const getEmployeeActivity = async <T>(): Promise<T> => {
       method: "post",
       headers: HEADERS,
     });
-    console.log(response);
     if (!response.ok) {
-      console.log("getEmployeeActivity response NOT OK");
       throw new Error(response.statusText);
     }
 
     const data: T = await response.json();
-    console.log("total data: ");
-    console.log(data);
     return data;
   } catch (error) {
-    console.log("erro zashlo");
-    console.log(error);
     if (error instanceof Error) {
-      console.log("getEmployeeActivity type ERROR: " + error);
       throw new Error(error.message);
     } else {
       throw new Error(`Неизвестная ошибка getEmployeeActivity: ${error}`);
