@@ -2,12 +2,12 @@ export const mockData = {
   materials: {
     data: [
       {
-        id: 1,
+        id: "1",
         title: "Процесс обучения и развития в Компании",
         link: "home",
       },
       {
-        id: 2,
+        id: "2",
         title: "Важные материалы",
         link: "home2",
       },
@@ -105,7 +105,7 @@ export const mockData = {
     error: false,
     errorText: "",
   },
-  employeeInfo: {
+  userInfo: {
     data: {
       fullname: "Алексеев Кирилл Владимирович",
       position: "Разработчик-эксперт",
@@ -115,7 +115,7 @@ export const mockData = {
     error: false,
     errorText: "",
   },
-  employeeActivity: {
+  userActivities: {
     data: [
       {
         icon: "increase",

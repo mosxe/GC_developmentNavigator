@@ -1,23 +1,30 @@
-export * from "./user";
-export * from "./materials";
-export * from "./recommendations";
+import { mockData } from "./mockData";
 
-// import { mockData } from "./mockData";
+const isDevelopment = import.meta.env.DEV;
+const API_BASE = "oapi/DevelopmentNavigator";
+const HEADERS = {
+  "x-app-id": "devnav",
+  "Content-Type": "application/json",
+};
 
-// const isDevelopment = import.meta.env.DEV;
-// const API_BASE = "oapi/DevelopmentNavigator";
-// const HEADERS = {
-//   "x-app-id": "devnav",
-//   "Content-Type": "application/json",
-// };
+export const fetchClient = async <T>(url: string): Promise<T> => {
+  const response = await fetch(`${API_BASE}/${url}`, {
+    method: "post",
+    headers: HEADERS,
+  });
 
-// const fetchMock = <T>(mockData: T): Promise<T> => {
-//   return new Promise((resolve) => {
-//     setTimeout(() => {
-//       resolve(mockData);
-//     }, Math.random() * 2000);
-//   });
-// };
+  if (!response.ok) throw new Error(response.statusText);
+
+  return await response.json();
+};
+
+export const fetchMock = <T>(mockData: T): Promise<T> => {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve(mockData);
+    }, Math.random() * 2000);
+  });
+};
 
 // const getEmployeeInfo = async <T>(): Promise<T> => {
 //   if (isDevelopment) {
@@ -97,7 +104,6 @@ export * from "./recommendations";
 //     return fetchMock(mockData.recommendations) as T;
 //   }
 
-//   try {
 //     const response = await fetch(`${API_BASE}/getRecommendations`, {
 //       method: "post",
 //       headers: HEADERS,

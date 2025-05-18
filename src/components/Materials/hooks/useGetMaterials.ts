@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { getMaterials } from "api";
+import { getMaterials } from "@/api";
 import { ResponseMaterials } from "./index.types";
 
 export const useGetMaterials = () => {

@@ -1,6 +1,7 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react-swc";
 import svgr from "vite-plugin-svgr";
+import path from "path";
 import mappingPlugin from "./src/mappingPlugin";
 
 type ViteConfig = {
@@ -20,6 +21,7 @@ export default defineConfig(({ mode }: ViteConfig) => {
         components: "/src/components",
         api: "/src/api",
         strings: "/src/strings",
+        "@": path.resolve(__dirname, "./src"),
       },
     },
     plugins: [
