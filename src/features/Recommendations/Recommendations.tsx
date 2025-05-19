@@ -25,7 +25,7 @@ const Recommendations: FunctionComponent = () => {
   if (error) {
     return (
       <RecommendationsLayout>
-        <div style={{ marginTop: "48px" }}>{ERROR_MESSAGE}</div>
+        <div style={{ marginTop: "24px" }}>{ERROR_MESSAGE}</div>
       </RecommendationsLayout>
     );
   }

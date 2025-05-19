@@ -1,3 +1,5 @@
+import { IconName } from "@/types";
+
 export interface UserInfo {
   fullname: string;
   position: string;
@@ -5,8 +7,7 @@ export interface UserInfo {
 }
 
 export interface UserActivity {
-  // icon: IconProps;
-  icon: string;
+  icon: IconName;
   title: string;
   link: string;
   date: string;

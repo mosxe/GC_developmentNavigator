@@ -1,0 +1,6 @@
+.user-activity {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+  grid-auto-rows: 265px;
+  gap: 20px;
+}

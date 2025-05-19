@@ -10,22 +10,22 @@ const UserInfo: FunctionComponent = () => {
 
   if (isLoading) {
     return (
-      <div className={styles["user-info"]}>
+      <section className={styles["user-info"]}>
         <Skeleton width={80} height={80} />
         <div className={styles["user-info__container"]}>
           <Skeleton height={24} />
           <Skeleton height={18} />
         </div>
-      </div>
+      </section>
     );
   }
 
   if (error) {
-    return <div className={styles["user-info"]}>{ERROR_MESSAGE}</div>;
+    return <section className={styles["user-info"]}>{ERROR_MESSAGE}</section>;
   }
 
   return (
-    <div className={styles["user-info"]}>
+    <section className={styles["user-info"]}>
       <ErrorBoundary fallback={<div>{ERROR_MESSAGE}</div>}>
         <div className={styles["user-info__img"]}>
           <img src={data.avatar} alt="Фото" />
@@ -35,7 +35,7 @@ const UserInfo: FunctionComponent = () => {
           <span className={styles["user-info__text"]}>{data.position}</span>
         </div>
       </ErrorBoundary>
-    </div>
+    </section>
   );
 };
 
