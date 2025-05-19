@@ -10,8 +10,7 @@ import styles from "./UserActivities.module.scss";
 
 const UserActivities: FunctionComponent = () => {
   const { data, isLoading, error } = useGetUserActivities();
-  console.log("error");
-  console.log(error);
+
   if (isLoading) {
     return (
       <section className={styles["user-activity"]}>

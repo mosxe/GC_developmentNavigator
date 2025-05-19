@@ -11,8 +11,6 @@ export const useGetUserActivities = () => {
     const fetchData = async () => {
       try {
         const response = await getUserActivities();
-        console.log("response");
-        console.log(response);
         setData(response.data);
         if (response.error) {
           setError(
@@ -21,10 +19,8 @@ export const useGetUserActivities = () => {
           );
         }
       } catch (error) {
-        console.log("popali v tach");
         console.error(error);
         if (error instanceof Error) {
-          console.log("type error: " + error.message);
           setError(
             error.message ||
               "Ошибка получения данных по API в методе getUserActivities"

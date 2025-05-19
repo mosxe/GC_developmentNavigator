@@ -7,5 +7,5 @@ export const getMaterials = async (): Promise<ApiResponse<Material[]>> => {
   if (import.meta.env.DEV) {
     return fetchMock<ApiResponse<Material[]>>(mockData.materials);
   }
-  return await fetchClient<ApiResponse<Material[]>>("getMaterials2222");
+  return await fetchClient<ApiResponse<Material[]>>("getMaterials");
 };
