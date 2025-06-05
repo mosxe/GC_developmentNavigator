@@ -164,4 +164,20 @@
       background-color: rgba(204, 204, 204, 0.35);
     }
   }
+
+  &__modal-actions {
+    display: flex;
+    gap: 16px;
+    justify-content: flex-end;
+  }
+
+  &__modal-button {
+    color: #fff !important;
+    background-color: #8b55ff !important;
+    transition: background-color 0.3s;
+
+    &:hover {
+      background-color: #6929f2 !important;
+    }
+  }
 }
