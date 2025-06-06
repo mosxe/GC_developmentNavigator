@@ -20,7 +20,7 @@ const TextTooltip = ({ text, children }: Props) => {
 
   if (isShowTooltip) {
     return (
-      <Tooltip closeOnScroll variant="light" content={text} position="top">
+      <Tooltip variant="light" content={text} position="top">
         <div ref={textRef}>{children}</div>
       </Tooltip>
     );

@@ -4,7 +4,8 @@ import { UserActivity } from "@/types";
 import ActivityCard from "./components/ActivityCard";
 import ActivitySkeletonCard from "./components/ActivitySkeletonCard";
 import { ErrorBoundary } from "react-error-boundary";
-import { Toasts } from "@ff/ui-kit";
+import Toasts from "@ff/ui-kit/lib/Toasts";
+import Carousel from "@ff/ui-kit/lib/Carousel";
 import { ERROR_MESSAGE } from "@/constants";
 import styles from "./UserActivities.module.scss";
 
@@ -13,13 +14,12 @@ const UserActivities: FunctionComponent = () => {
 
   if (isLoading) {
     return (
-      <section className={styles["user-activity"]}>
-        <ActivitySkeletonCard />
-        <ActivitySkeletonCard />
-        <ActivitySkeletonCard />
-        <ActivitySkeletonCard />
-        <ActivitySkeletonCard />
-        <ActivitySkeletonCard />
+      <section>
+        <div className={styles["user-activity"]}>
+          <ActivitySkeletonCard />
+          <ActivitySkeletonCard />
+          <ActivitySkeletonCard />
+        </div>
       </section>
     );
   }
@@ -29,11 +29,18 @@ const UserActivities: FunctionComponent = () => {
   }
 
   return (
-    <section className={styles["user-activity"]}>
+    <section>
       <ErrorBoundary fallback={<div>{ERROR_MESSAGE}</div>}>
-        {data.map((card: UserActivity, index) => (
-          <ActivityCard key={index} {...card} />
-        ))}
+        <Carousel
+          className={styles.carousel}
+          arrowsPosition="outside"
+          displaySliders={3}
+          arrows
+        >
+          {data.map((card: UserActivity, index) => (
+            <ActivityCard key={index} {...card} />
+          ))}
+        </Carousel>
       </ErrorBoundary>
       <Toasts style={{ zIndex: 2000 }} />
     </section>

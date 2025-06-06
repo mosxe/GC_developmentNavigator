@@ -137,15 +137,16 @@ export const mockData = {
         title:
           "Оценка достижений Оценка достижений Оценка достижений Оценка достижений ",
         link: "/home",
-        date: "10.09.2024",
-        status: "",
+        date: "01.01.2020",
+        status:
+          "asdasd asd as assd asd ad asd asd asd asd adasd asds asdasd asd as assd asd ad asd asd asd asd adasd asds",
         buttonName: "Результаты",
         isAssignable: false,
         progress: {
-          type: "score",
-          score: "4.7",
-          maxScore: "10",
-          text: "",
+          type: "text",
+          score: "",
+          maxScore: "",
+          text: "asdasdsad",
         },
       },
       {
