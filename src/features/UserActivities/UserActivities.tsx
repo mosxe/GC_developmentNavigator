@@ -34,6 +34,7 @@ const UserActivities: FunctionComponent = () => {
         <Carousel
           className={styles.carousel}
           arrowsPosition="outside"
+          infinity={false}
           displaySliders={3}
           arrows
         >

@@ -12,9 +12,14 @@ const TextTooltip = ({ text, children }: Props) => {
 
   useEffect(() => {
     if (textRef.current) {
-      setIsShowTooltip(
-        textRef.current.scrollHeight > textRef.current.clientHeight
-      );
+      const range = document.createRange();
+      range.selectNodeContents(textRef.current);
+      const rect = range.getBoundingClientRect();
+      const elRect = textRef.current.getBoundingClientRect();
+
+      if (rect.height > elRect.height) {
+        setIsShowTooltip(true);
+      }
     }
   }, []);
 
