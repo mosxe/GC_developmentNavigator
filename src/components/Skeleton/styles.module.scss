@@ -7,15 +7,15 @@
     linear,
     left top,
     right top,
-    color-stop(8%, rgba(130, 130, 130, 0.2)),
-    color-stop(18%, rgba(130, 130, 130, 0.1)),
-    color-stop(33%, rgba(130, 130, 130, 0.2))
+    color-stop(24%, rgba(130, 130, 130, 0.2)),
+    color-stop(36%, rgba(130, 130, 130, 0.1)),
+    color-stop(64%, rgba(130, 130, 130, 0.2))
   );
   background: linear-gradient(
     to right,
-    rgba(130, 130, 130, 0.2) 8%,
-    rgba(130, 130, 130, 0.1) 18%,
-    rgba(130, 130, 130, 0.2) 33%
+    rgba(130, 130, 130, 0.2) 24%,
+    rgba(130, 130, 130, 0.1) 36%,
+    rgba(130, 130, 130, 0.2) 64%
   );
   background-size: 400% 100%;
   animation: wave-lines 1.6s ease infinite;
