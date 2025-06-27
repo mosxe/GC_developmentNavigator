@@ -117,7 +117,7 @@ const ActivityCard: FunctionComponent<UserActivity> = (props): ReactElement => {
               </span>
             </div>
           </div>
-          {link && (
+          {(link || isAssignable) && (
             <div className={styles["activity-card__footer"]}>
               <button
                 type="button"

@@ -1,4 +1,5 @@
 import { FunctionComponent } from "react";
+import clsx from "classnames";
 import styles from "./Widget.module.scss";
 
 type Props = {
@@ -6,11 +7,21 @@ type Props = {
   text: string;
   link: string;
   image: string;
+  background?: "yellow" | "purple";
 };
 
-const Widget: FunctionComponent<Props> = ({ title, text, link, image }) => {
+const Widget: FunctionComponent<Props> = ({
+  title,
+  text,
+  link,
+  image,
+  background = "yellow",
+}) => {
+  const widgetClassName = clsx(styles.widget, {
+    [styles.widget_purple]: background === "purple",
+  });
   return (
-    <div className={styles.widget}>
+    <div className={widgetClassName}>
       <div className={styles.widget__container}>
         <h4>{title}</h4>
         {text && <span className={styles.widget__text}>{text}</span>}
