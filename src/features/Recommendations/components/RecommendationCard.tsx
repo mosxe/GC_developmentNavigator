@@ -21,7 +21,7 @@ const RecommendationCard: FunctionComponent<Recommendation> = ({
         <div className={styles["recommendation-card__wrapper"]}>
           <img
             className={styles["recommendation-card__image"]}
-            src="https://i.pinimg.com/originals/5d/e2/42/5de24294bad21ec99931f4c362354f22.jpg"
+            src={image}
             alt="Картинка"
           />
         </div>

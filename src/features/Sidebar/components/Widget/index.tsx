@@ -4,7 +4,7 @@ import styles from "./Widget.module.scss";
 
 type Props = {
   title: string;
-  text: string;
+  text?: string;
   link: string;
   image: string;
   background?: "yellow" | "purple";
@@ -31,7 +31,7 @@ const Widget: FunctionComponent<Props> = ({
         <button
           className={styles.widget__btn}
           type="button"
-          onClick={() => window.open(link, "_blank")}
+          onClick={() => window.open(window.location.origin + link, "_blank")}
         >
           Подробнее
           <svg

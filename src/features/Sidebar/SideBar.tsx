@@ -1,15 +1,15 @@
 import { FunctionComponent } from "react";
 import Widget from "./components/Widget";
 import styles from "./SideBar.module.scss";
+import Image from "@/images/career_consultants.jpg"
 
 const Sidebar: FunctionComponent = () => {
   return (
     <aside className={styles.aside}>
       <Widget
-        title="Карьерная страница"
-        text="Совершенствуй свои навыки!"
-        image="https://masterpiecer-images.s3.yandex.net/7b45240a719f11ee947d3abd0be4d755:upscaled"
-        link="home"
+        title="Календарь карьерных консультантов"
+        image={Image}
+        link="/_wt/calendar_career_consultants/doc_id/7508746636170091242"
         background="purple"
       />
     </aside>
