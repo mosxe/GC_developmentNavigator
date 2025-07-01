@@ -119,7 +119,7 @@ export const mockData = {
     data: [
       {
         icon: "increase",
-        title: "Рост (ОС 360)",
+        title: "Оценка ценностей",
         link: "/home",
         date: "24.11.2024",
         status: "Оценка руководителя проводилась очень давно",
@@ -151,7 +151,7 @@ export const mockData = {
       },
       {
         icon: "tech_review",
-        title: "Техревью",
+        title: "Оценка компетенций",
         link: "/home",
         date: "23.10.2024",
         status: "Оценка эксперта",
@@ -204,7 +204,7 @@ export const mockData = {
         isAssignable: false,
         progress: {
           type: "progress",
-          score: "60",
+          score: "100",
           maxScore: "100",
           text: "",
         },

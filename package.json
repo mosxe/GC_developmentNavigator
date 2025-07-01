@@ -13,7 +13,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@ff/ui-kit": "^4.12.0",
+    "@ff/ui-kit": "^4.13.0",
     "@intauto/ui-kit": "^6.0.0",
     "classnames": "^2.5.1",
     "lodash": "^4.17.21",
