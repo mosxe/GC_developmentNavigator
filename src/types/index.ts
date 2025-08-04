@@ -3,3 +3,4 @@ export * from "./materials";
 export * from "./recommendations";
 export * from "./api";
 export * from "./icon";
+export * from "./navLink";

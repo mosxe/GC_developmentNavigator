@@ -21,6 +21,7 @@ const Materials: FunctionComponent = () => {
   if (error) {
     return <MaterialsLayout>{ERROR_MESSAGE}</MaterialsLayout>;
   }
+
   return (
     <MaterialsLayout>
       <ErrorBoundary fallback={<div>{ERROR_MESSAGE}</div>}>

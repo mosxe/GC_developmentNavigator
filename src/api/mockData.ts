@@ -111,6 +111,7 @@ export const mockData = {
       position: "Разработчик-эксперт",
       avatar:
         "https://i.pinimg.com/736x/d0/cf/a8/d0cfa8b3f2b9aa687e99cdd88bb82f10.jpg",
+      education: "могу подать заявку на групповое или внешнее обучение.",
     },
     error: false,
     errorText: "",
@@ -229,6 +230,44 @@ export const mockData = {
         text: "",
       },
     },
+    error: false,
+    errorText: "",
+  },
+  navLinks: {
+    data: [
+      {
+        link: "/home",
+        label: "Моя адаптация",
+      },
+      {
+        link: "/home",
+        label: "Мое обучение",
+      },
+      {
+        link: "/home",
+        label: "Моя оценка",
+      },
+      {
+        link: "/home",
+        label: "Мои заявки",
+      },
+      {
+        link: "/home",
+        label: "Мои план развития",
+      },
+      {
+        link: "/home",
+        label: "Мои приказы на обучение",
+      },
+      {
+        link: "/home",
+        label: "Карьерные консультации",
+      },
+      {
+        link: "/home",
+        label: "Очень длиннный заголовок который нужно протестировать",
+      },
+    ],
     error: false,
     errorText: "",
   },

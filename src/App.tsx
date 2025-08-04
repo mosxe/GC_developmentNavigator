@@ -10,7 +10,7 @@ import styles from "./App.module.scss";
 const App: FunctionComponent = () => {
   return (
     <>
-      <Title text="Навигатор по развитию" />
+      <Title text="Личный кабинет" />
       <main className={styles.row}>
         <div className={styles.wrapper}>
           <UserInfo />

@@ -1,11 +1,13 @@
 import { FunctionComponent } from "react";
+import NavLink from "@/features/NavList";
 import Widget from "./components/Widget";
 import styles from "./SideBar.module.scss";
-import Image from "@/images/career_consultants.jpg"
+import Image from "@/images/career_consultants.jpg";
 
 const Sidebar: FunctionComponent = () => {
   return (
     <aside className={styles.aside}>
+      <NavLink />
       <Widget
         title="Календарь карьерных консультантов"
         image={Image}

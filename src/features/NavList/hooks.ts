@@ -1,28 +1,21 @@
 import { useState, useEffect } from "react";
-import { getUserInfo } from "@/api";
-import { UserInfo } from "@/types";
+import { getNavLinks } from "@/api";
+import { NavLink } from "@/types";
 
-const initialState = {
-  fullname: "",
-  position: "",
-  avatar: "",
-  education: "",
-};
-
-export const useGetUserInfo = () => {
-  const [data, setData] = useState<UserInfo>(initialState);
+export const useGetNavLinks = () => {
+  const [data, setData] = useState<NavLink[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await getUserInfo();
+        const response = await getNavLinks();
         setData(response.data);
         if (response.error) {
           setError(
             response.errorText ||
-              "Ошибка получения данных по API в методе getUserInfo"
+              "Ошибка получения данных по API в методе getNavLinks"
           );
         }
       } catch (error) {
@@ -30,7 +23,7 @@ export const useGetUserInfo = () => {
         if (error instanceof Error) {
           setError(error.message);
         } else {
-          setError("Ошибка получения данных по API в методе getUserInfo");
+          setError("Ошибка получения данных по API в методе getNavLinks");
         }
       } finally {
         setIsLoading(false);

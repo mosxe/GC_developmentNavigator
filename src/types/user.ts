@@ -4,6 +4,7 @@ export interface UserInfo {
   fullname: string;
   position: string;
   avatar: string;
+  education: string;
 }
 
 export interface UserActivity {

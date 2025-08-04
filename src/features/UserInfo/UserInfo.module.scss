@@ -1,11 +1,16 @@
 .user-info {
   display: flex;
+  flex-direction: column;
   gap: 24px;
-  align-items: center;
-  padding: 16px;
-  margin-top: 16px;
-  border-radius: 16px;
-  background-color: #f3f3f3;
+
+  &__wrapper {
+    display: flex;
+    gap: 24px;
+    align-items: center;
+    padding: 16px;
+    border-radius: 16px;
+    background-color: #f3f3f3;
+  }
 
   &__container {
     width: 100%;
@@ -39,5 +44,10 @@
     font-weight: 400;
     line-height: 18px;
     color: rgb(119, 114, 124);
+  }
+
+  &__desc {
+    font-size: 16px;
+    color: rgb(73, 70, 76);
   }
 }
