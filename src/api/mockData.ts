@@ -111,7 +111,6 @@ export const mockData = {
       position: "Разработчик-эксперт",
       avatar:
         "https://i.pinimg.com/736x/d0/cf/a8/d0cfa8b3f2b9aa687e99cdd88bb82f10.jpg",
-      education: "могу подать заявку на групповое или внешнее обучение.",
     },
     error: false,
     errorText: "",

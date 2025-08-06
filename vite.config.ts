@@ -9,7 +9,7 @@ type ViteConfig = {
   mode: string;
 };
 
-const baseDefault = "/components/gnivc_development_navigator/web";
+const baseDefault = "/components/gnivc_cabinet_person/web";
 
 export default defineConfig(({ mode }: ViteConfig) => {
   const base = mode === "production" ? baseDefault : "/";
@@ -27,7 +27,7 @@ export default defineConfig(({ mode }: ViteConfig) => {
     plugins: [
       react(),
       svgr({ include: "**/*.svg?r" }),
-      mappingPlugin("gnivc_development_navigator"),
+      mappingPlugin("gnivc_cabinet_person"),
     ],
   };
 });

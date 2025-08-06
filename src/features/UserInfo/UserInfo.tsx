@@ -18,7 +18,6 @@ const UserInfo: FunctionComponent = () => {
             <Skeleton height={18} />
           </div>
         </div>
-        <Skeleton height={24} />
       </section>
     );
   }
@@ -39,12 +38,6 @@ const UserInfo: FunctionComponent = () => {
             <span className={styles["user-info__text"]}>{data.position}</span>
           </div>
         </div>
-        {data.education && (
-          <div className={styles["user-info__desc"]}>
-            <strong>Моё обучение: </strong>
-            <span dangerouslySetInnerHTML={{ __html: data.education }}></span>
-          </div>
-        )}
       </ErrorBoundary>
     </section>
   );

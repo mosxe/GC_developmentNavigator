@@ -1,5 +1,5 @@
 const APP_KEY = import.meta.env.VITE_APP_KEY;
-const API_BASE = "oapi/DevelopmentNavigator";
+const API_BASE = "oapi/CabinetPerson";
 const HEADERS = {
   "x-app-id": APP_KEY,
   "Content-Type": "application/json",

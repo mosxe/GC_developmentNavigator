@@ -6,7 +6,6 @@ const initialState = {
   fullname: "",
   position: "",
   avatar: "",
-  education: "",
 };
 
 export const useGetUserInfo = () => {
