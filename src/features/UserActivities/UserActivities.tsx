@@ -29,7 +29,7 @@ const UserActivities: FunctionComponent = () => {
   }
 
   return (
-    <section>
+    <section className={styles["user-activities"]}>
       <ErrorBoundary fallback={<div>{ERROR_MESSAGE}</div>}>
         <Carousel
           className={styles.carousel}
