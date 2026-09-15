@@ -14,7 +14,7 @@ const UserActivities: FunctionComponent = () => {
 
   if (isLoading) {
     return (
-      <section>
+      <section className={styles["user-activities"]}>
         <div className={styles["user-activity"]}>
           <ActivitySkeletonCard />
           <ActivitySkeletonCard />
